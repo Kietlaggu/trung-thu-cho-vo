@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc Mừng Trung Thu 🌕</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff; text-align:center;
+  background:radial-gradient(circle at 50% 18%,#7b241d 0,#43070b 45%,#170205 100%);
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.35;
+  background-image:radial-gradient(#ffd875 1px,transparent 1px);
+  background-size:55px 55px;
+}
+.moon{
+  width:130px;height:130px;border-radius:50%;
+  background:#ffe6a0; margin:55px auto 20px;
+  box-shadow:0 0 45px #ffd66b,0 0 100px rgba(255,197,73,.35);
+  position:relative;
+}
+.moon:after{
+  content:""; position:absolute; width:130px;height:130px;border-radius:50%;
+  background:#5b1012; left:38px; top:-10px;
+}
+.card{
+  width:min(90%,620px); margin:0 auto 50px;
+  padding:35px 24px 40px;
+  border:1px solid rgba(255,218,132,.45);
+  border-radius:28px;
+  background:rgba(75,8,12,.72);
+  box-shadow:0 15px 50px rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+}
+h1{color:#ffd875;font-size:clamp(32px,8vw,58px);margin:5px 0 15px}
+h2{font-size:22px;color:#ffe9b0;margin:12px 0 25px}
+.message{font-size:18px;line-height:1.8;color:#fff4d2}
+.from{margin-top:28px;color:#ffd875;font-size:18px;font-weight:bold}
+.lantern{font-size:42px;margin:10px}
+button{
+  margin-top:25px;padding:13px 24px;border:0;border-radius:999px;
+  background:#d99a24;color:white;font-size:16px;font-weight:bold;cursor:pointer;
+}
+#surprise{display:none;margin-top:22px;color:#ffe7a1;line-height:1.7}
+footer{padding:0 20px 30px;color:#cda97a;font-size:13px}
+</style>
+</head>
+<body>
+<div class="moon"></div>
+<div class="card">
+  <div class="lantern">🏮 ✨ 🏮</div>
+  <h1>Chúc Mừng Trung Thu</h1>
+  <h2>🌕 Một mùa trăng thật ấm áp 🌕</h2>
+  <div class="message">
+    Chúc bạn có một mùa Trung Thu thật vui vẻ,<br>
+    nhiều tiếng cười, bình an và thật nhiều điều tốt đẹp.<br><br>
+    Mong ánh trăng đêm nay mang đến cho bạn<br>
+    những khoảnh khắc thật đáng nhớ. ❤️
+  </div>
+  <div class="from">From: Kiệt</div>
+  <button onclick="document.getElementById('surprise').style.display='block'">
+    🎁 Mở lời chúc đặc biệt
+  </button>
+  <div id="surprise">
+    Chúc bạn luôn vui vẻ, hạnh phúc và gặp thật nhiều may mắn! 🌟
+  </div>
+</div>
+<footer>Quét QR trên bánh Trung Thu để mở trang này 🌕</footer>
+<script>
+document.addEventListener("click", e=>{
+  if(e.target.tagName==="BUTTON"){
+    for(let i=0;i<18;i++){
+      const s=document.createElement("span");
+      s.textContent="✨";
+      s.style.position="fixed";
+      s.style.left=(50+(Math.random()-0.5)*70)+"%";
+      s.style.top="55%";
+      s.style.fontSize=(14+Math.random()*22)+"px";
+      s.style.transition="all 1.2s ease-out";
+      s.style.pointerEvents="none";
+      document.body.appendChild(s);
+      requestAnimationFrame(()=>{s.style.transform=`translate(${(Math.random()-.5)*220}px,-${80+Math.random()*220}px)`;s.style.opacity="0"});
+      setTimeout(()=>s.remove(),1300);
+    }
+  }
+});
+</script>
+</body>
+</html>
